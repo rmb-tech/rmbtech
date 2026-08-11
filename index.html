@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rickard Malm | IT & Systemutveckling</title>
+    <title>Rickard Malm | IT-Arkitekt & Automationsexpert</title>
     <style>
-        /* CSS Variabler för enkelt färgbyte */
+        /* CSS Variabler för tech-fokuserad, mörk design */
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --bg-color: #f8fafc;
-            --text-color: #0f172a;
-            --card-bg: #ffffff;
-            --gray-text: #64748b;
+            --primary-color: #3b82f6; /* Modern blå */
+            --secondary-color: #2563eb; /* Djupare blå */
+            --bg-color: #0c0f16; /* Mycket mörkgrå, nästan svart, med en hint av blått */
+            --bg-accent: #111827; /* Mörkare grå för kort och sektioner */
+            --text-color: #e5e7eb; /* Off-white för text */
+            --gray-text: #9ca3af; /* Grå text */
+            --glow-color: rgba(59, 130, 246, 0.3); /* Glowing blue */
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --card-border: 1px solid #1f2937;
         }
 
-        /* Grundläggande reset */
+        /* Grundläggande reset och styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -31,111 +35,238 @@
 
         /* Navigation */
         header {
-            background-color: var(--card-bg);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            border-bottom: var(--card-border);
         }
 
         nav {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: var(--primary-color);
             text-decoration: none;
+            text-shadow: 0 0 15px var(--glow-color);
         }
 
         .nav-links a {
             margin-left: 2rem;
             text-decoration: none;
-            color: var(--text-color);
+            color: var(--gray-text);
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.3s, text-shadow 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--primary-color);
+            text-shadow: 0 0 10px var(--glow-color);
         }
 
-        /* Hero Sektion */
+        /* Hero Sektion - "Rickard Malm - IT-Arkitekt & Automationsexpert" */
         .hero {
-            max-width: 1100px;
-            margin: 8rem auto 4rem;
+            max-width: 1200px;
+            margin: 10rem auto 6rem;
             padding: 0 2rem;
             text-align: center;
+            background: linear-gradient(180deg, var(--bg-color) 0%, var(--accent-glow) 100%);
+            border-radius: 12px;
+            position: relative;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
             color: var(--text-color);
+            line-height: 1.1;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--gray-text);
-            max-width: 700px;
-            margin: 0 auto 2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
+            color: #ffffff;
+            padding: 1rem 3rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 0 20px var(--glow-color);
         }
 
         .btn:hover {
             background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px var(--primary-color);
         }
 
-        /* Sektioner (Om, Erfarenhet, Färdigheter) */
+        /* Kompetens & Projekt Sektioner */
         section {
-            max-width: 1100px;
-            margin: 0 auto 4rem;
+            max-width: 1200px;
+            margin: 0 auto 6rem;
             padding: 0 2rem;
         }
 
         section h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
             text-align: center;
             color: var(--primary-color);
+            text-shadow: 0 0 15px var(--glow-color);
         }
 
         /* Kompetenser Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .skill-card {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background-color: var(--bg-accent);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 12px rgba(0,0,0,0.05);
             text-align: center;
-            border-top: 4px solid var(--primary-color);
+            border: var(--card-border);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
         }
 
         .skill-card h3 {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--text-color);
+            font-size: 1.6rem;
+        }
+
+        .skill-card p {
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Projekt & Case Studies - "Håfveruds Verksamhetsportal" */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+
+        .project-item {
+            background-color: var(--bg-accent);
+            padding: 3rem;
+            border-radius: 12px;
+            border: var(--card-border);
+            position: relative;
+        }
+
+        .project-item.main-project {
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0 25px var(--glow-color);
+        }
+
+        .project-item h3 {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .project-description {
+            color: var(--gray-text);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Main Project Technology Flow - "n8n, Firebase, API, Gemini" */
+        .tech-flow {
+            background-color: rgba(12, 15, 22, 0.6);
+            border-radius: 8px;
+            border: var(--card-border);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tech-flow-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            color: var(--gray-text);
+        }
+
+        .tech-flow-item span {
+            color: var(--text-color);
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        .tech-flow-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn.btn-tech {
+            background-color: #1f2937;
+            box-shadow: none;
+            margin-top: 1rem;
+        }
+
+        .btn.btn-tech:hover {
+            background-color: #374151;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        /* Other Projects Grid */
+        .other-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
         }
 
         /* Tidslinje Erfarenhet */
@@ -146,12 +277,18 @@
         }
 
         .timeline-item {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background-color: var(--bg-accent);
+            padding: 2rem;
+            border-radius: 12px;
             margin-bottom: 1.5rem;
             border-left: 4px solid var(--primary-color);
+            border: var(--card-border);
+            transition: transform 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+            border-color: var(--primary-color);
         }
 
         .timeline-date {
@@ -161,8 +298,9 @@
         }
 
         .timeline-title {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-bottom: 0.5rem;
+            color: var(--text-color);
         }
 
         .timeline-company {
@@ -171,13 +309,25 @@
             margin-bottom: 1rem;
         }
 
+        .timeline-item p {
+            color: var(--gray-text);
+        }
+
+        /* Kontakt */
+        #kontakt {
+            border-top: var(--card-border);
+            padding-top: 6rem;
+            background: linear-gradient(0deg, var(--accent-glow) 0%, var(--bg-color) 100%);
+        }
+
         /* Footer */
         footer {
-            background-color: var(--text-color);
-            color: white;
+            background-color: var(--accent-glow);
+            color: var(--gray-text);
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            padding: 3rem;
+            border-top: var(--card-border);
+            position: relative;
         }
 
         /* Responsiv design */
@@ -186,7 +336,10 @@
                 display: none; /* Kan bytas ut mot en hamburgermeny framöver */
             }
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.8rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -200,102 +353,138 @@
             <div class="nav-links">
                 <a href="#om">Om mig</a>
                 <a href="#kompetens">Kompetens</a>
-                <a href="#erfarenhet">Erfarenhet & Utbildning</a>
+                <a href="#projekt">Projekt</a>
+                <a href="#erfarenhet">Erfarenhet</a>
                 <a href="#kontakt">Kontakt</a>
             </div>
         </nav>
     </header>
 
-    <!-- Hero / Intro -->
+    <!-- Hero / Intro - Rickard Malm - IT-Arkitekt & Automationsexpert -->
     <section class="hero" id="om">
         <h1>Hej, jag är Rickard Malm</h1>
-        <p>IT-administratör och blivande systemutvecklare med över 15 års erfarenhet av att bygga, drifta och förvalta moderna IT-miljöer och e-handelslösningar.</p>
-        <a href="#kontakt" class="btn">Kontakta mig</a>
+        <p>En teknikpassionerad IT-arkitekt och systemutvecklare med över 15 års erfarenhet. Jag löser komplexa affärsproblem genom kod, automation och AI-integrationer. Min passion är att bygga robusta, automatiserade plattformar och systemlösningar med ett tydligt värde och en wow-känsla.</p>
+        <p style="color: var(--primary-color); font-weight: bold; margin-bottom: 2rem;">Håfveruds Rökeri & Brasseri | Systemutvecklare | Automationsexpert</p>
+        <a href="#kontakt" class="btn">Låt oss prata</a>
     </section>
 
     <!-- Kompetenser -->
     <section id="kompetens">
-        <h2>Kompetensområden</h2>
+        <h2>Kärnkompetenser</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <h3>Webbutveckling</h3>
-                <p>HTML5, CSS3, JavaScript, PHP, GitHub.</p>
+                <h3>AI & Automation</h3>
+                <p>Utvecklar anpassade AI-lösningar med Gemini och ChatGPT. Automatiserar affärsprocesser via n8n, webhooks och AI-workflows.</p>
+                <ul class="skill-list">
+                    <li>n8n</li>
+                    <li>Gemini / ChatGPT (Integration)</li>
+                    <li>Automation</li>
+                </ul>
             </div>
             <div class="skill-card">
-                <h3>System & Moln</h3>
-                <p>Microsoft 365, Azure, systemförvaltning och IT-säkerhet.</p>
+                <h3>API & Systemintegration</h3>
+                <p>Bygger och förvaltar robusta API-anslutningar mot Fortnox, WaiterAid och Personalkollen. Säkrar inloggningar med Google Firebase (Authentication & Database).</p>
+                <ul class="skill-list">
+                    <li>REST API</li>
+                    <li>Firebase</li>
+                    <li>API Gateway (n8n)</li>
+                </ul>
             </div>
             <div class="skill-card">
-                <h3>E-handel & CMS</h3>
-                <p>WordPress, WooCommerce, automatiserade butiksflöden.</p>
+                <h3>Systemutveckling & Arkitektur</h3>
+                <p>Anpassad webbutveckling med fokus på säkerhet, robusthet och långsiktig systemförvaltning. Expert på e-handel och digital digitalisering.</p>
+                <ul class="skill-list">
+                    <li>Webbutveckling</li>
+                    <li>Säkerhet & Robusthet</li>
+                    <li>Systemarkitektur</li>
+                </ul>
             </div>
-            <div class="skill-card">
-                <h3>Kommande</h3>
-                <p>Java och djupgående molninfrastruktur (Studerar Ht 2026).</p>
+        </div>
+    </section>
+
+    <!-- Projekt & Case Studies - Rickard Malm -->
+    <section id="projekt">
+        <h2>Utvalda Projekt & Case Studies</h2>
+        <div class="project-grid">
+
+            <!-- Main Project: app.hafveruds.se -->
+            <div class="project-item main-project">
+                <h3>Håfveruds Verksamhetsportal</h3>
+                <a href="https://app.hafveruds.se/" class="project-link" target="_blank">app.hafveruds.se</a>
+                <p class="project-description">Djupt integrerad verksamhetsportal och AI-assistent. Portalen är ett centralt nav för datanätverk, automation och AI-agenter, utvecklad med fokus på wow-känsla och säkerhet.</p>
+                
+                <div class="tech-flow">
+                    <div class="tech-flow-title">Teknisk Arkitektur & Dataströmmar</div>
+                    <div class="tech-flow-item">Inloggning & Säkerhet: <span>Google Firebase (Authentication)</span></div>
+                    <div class="tech-flow-item">Databas: <span>Google Firebase (Database)</span></div>
+                    <div class="tech-flow-item">Automation: <span>n8n (Flows, Webhooks)</span></div>
+                    <div class="tech-flow-item">API-integrationer: <span>Fortnox, Personalkollen, WaiterAid</span></div>
+                    <div class="tech-flow-item">AI & Chatt: <span>Håfveruds AI-Agent (Gemini/ChatGPT Integration)</span></div>
+                    <div class="btn btn-tech" style="padding: 0.6rem 1.5rem; display: inline-block;">Håfveruds AI-Agent</div>
+                </div>
             </div>
+
+            <!-- Other Projects: hafveruds.se & el-supply.se -->
+            <div class="other-projects">
+                <div class="project-item">
+                    <h3>Håfveruds E-handel & Portal</h3>
+                    <a href="https://hafveruds.se/" class="project-link" target="_blank">hafveruds.se</a>
+                    <p class="project-description">Snygg och modern e-handelplattform (WooCommerce) och digital portal för en framstående restaurangkedja. Integrerad med verksamhetsportalen och bokningssystemet.</p>
+                    <div class="skill-list">Wordpress</div>
+                    <div class="skill-list">WooCommerce</div>
+                </div>
+
+                <div class="project-item">
+                    <h3>E-Supply AB</h3>
+                    <a href="https://el-supply.se/" class="project-link" target="_blank">el-supply.se</a>
+                    <p class="project-description">En ren, snygg och tech-fokuserad e-handelsplattform (WooCommerce) för en specialistleverantör. Förenklat inköpsflöde för tekniska komponenter.</p>
+                    <div class="skill-list">Wordpress</div>
+                    <div class="skill-list">WooCommerce</div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Erfarenhet -->
     <section id="erfarenhet">
-        <h2>Arbetslivserfarenhet & Studier</h2>
+        <h2>Yrkesresa</h2>
         <div class="timeline">
             
             <div class="timeline-item">
-                <div class="timeline-date">Augusti 2026 – Maj 2028</div>
+                <div class="timeline-date">Ht 2026 – Maj 2028 (Kommande)</div>
                 <div class="timeline-title">Systemutvecklare (Javautvecklare med molninriktning)</div>
                 <div class="timeline-company">JENSEN yrkeshögskola</div>
-                <p>Heltidsstudier med inriktning på modern backend-utveckling, molntjänster och systemarkitektur.</p>
+                <p>Heltidsstudier med fokus på modern backend-utveckling och molnarkitektur.</p>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-date">April 2026 – Pågående</div>
-                <div class="timeline-title">IT- och administrativt ansvarig</div>
+                <div class="timeline-title">IT- och administrativt ansvarig / Systemutvecklare</div>
                 <div class="timeline-company">Håfveruds Rökeri & Brasseri</div>
-                <p>Ansvarig för IT-miljö, digital administration samt drift och utveckling av e-handel (WooCommerce).</p>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">2024 – 2025</div>
-                <div class="timeline-title">IT-tekniker</div>
-                <div class="timeline-company">Resolutor AB</div>
-                <p>Användarsupport, felsökning och hantering av teknisk infrastruktur.</p>
+                <p>Leder digital digitalisering, systemarkitektur och AI-agenter. Bygger verksamhetsportalen och automatiserade logistikflöden.</p>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-date">2012 – 2024</div>
                 <div class="timeline-title">IT-administratör & Systemförvaltare</div>
                 <div class="timeline-company">TVH Nordic AB</div>
-                <p>Långsiktigt ansvar för nätverk, systemunderhåll och säkerställande av stabil IT-drift.</p>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">2010 – 2011</div>
-                <div class="timeline-title">Webbhandel</div>
-                <div class="timeline-company">Kommunal vuxenutbildning</div>
-                <p>Specialiserad utbildning inom e-handel och digital försäljning.</p>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">2007 – 2008</div>
-                <div class="timeline-title">Technical Support Agent</div>
-                <div class="timeline-company">Sykes AB</div>
-                <p>Teknisk support och kundhantering.</p>
+                <p>Långsiktigt ansvar för nätverk, systemförvaltning och IT-drift.</p>
             </div>
 
         </div>
     </section>
 
-    <!-- Kontakt -->
+    <!-- Kontakt - Rickard Malm -->
     <section id="kontakt" style="text-align: center;">
-        <h2>Låt oss prata</h2>
-        <p style="color: var(--gray-text); margin-bottom: 2rem;">Söker du konsultation för webbutveckling, drift eller IT-support? Tveka inte att höra av dig.</p>
+        <h2>Starta din digitala transformation</h2>
+        <p style="color: var(--gray-text); margin-bottom: 2rem;">Redo att transformera din affärsverksamhet med smart automation och AI? Låt oss prata. Prata gärna med min AI-agent!</p>
         <a href="mailto:din.epost@exempel.se" class="btn">Skicka ett mail</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Rickard Malm. Alla rättigheter reserverade.</p>
+        <p>&copy; 2026 Rickard Malm. rmbtech.se</p>
     </footer>
 
 </body>
