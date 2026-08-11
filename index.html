@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rickard Malm | IT & Systemutveckling</title>
+    <style>
+        /* CSS Variabler för enkelt färgbyte */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --card-bg: #ffffff;
+            --gray-text: #64748b;
+        }
+
+        /* Grundläggande reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Sektion */
+        .hero {
+            max-width: 1100px;
+            margin: 8rem auto 4rem;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Sektioner (Om, Erfarenhet, Färdigheter) */
+        section {
+            max-width: 1100px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        /* Kompetenser Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        /* Tidslinje Erfarenhet */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: var(--gray-text);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsiv design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Kan bytas ut mot en hamburgermeny framöver */
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">rmbtech.se</a>
+            <div class="nav-links">
+                <a href="#om">Om mig</a>
+                <a href="#kompetens">Kompetens</a>
+                <a href="#erfarenhet">Erfarenhet & Utbildning</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero / Intro -->
+    <section class="hero" id="om">
+        <h1>Hej, jag är Rickard Malm</h1>
+        <p>IT-administratör och blivande systemutvecklare med över 15 års erfarenhet av att bygga, drifta och förvalta moderna IT-miljöer och e-handelslösningar.</p>
+        <a href="#kontakt" class="btn">Kontakta mig</a>
+    </section>
+
+    <!-- Kompetenser -->
+    <section id="kompetens">
+        <h2>Kompetensområden</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Webbutveckling</h3>
+                <p>HTML5, CSS3, JavaScript, PHP, GitHub.</p>
+            </div>
+            <div class="skill-card">
+                <h3>System & Moln</h3>
+                <p>Microsoft 365, Azure, systemförvaltning och IT-säkerhet.</p>
+            </div>
+            <div class="skill-card">
+                <h3>E-handel & CMS</h3>
+                <p>WordPress, WooCommerce, automatiserade butiksflöden.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Kommande</h3>
+                <p>Java och djupgående molninfrastruktur (Studerar Ht 2026).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Erfarenhet -->
+    <section id="erfarenhet">
+        <h2>Arbetslivserfarenhet & Studier</h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-date">Augusti 2026 – Maj 2028</div>
+                <div class="timeline-title">Systemutvecklare (Javautvecklare med molninriktning)</div>
+                <div class="timeline-company">JENSEN yrkeshögskola</div>
+                <p>Heltidsstudier med inriktning på modern backend-utveckling, molntjänster och systemarkitektur.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">April 2026 – Pågående</div>
+                <div class="timeline-title">IT- och administrativt ansvarig</div>
+                <div class="timeline-company">Håfveruds Rökeri & Brasseri</div>
+                <p>Ansvarig för IT-miljö, digital administration samt drift och utveckling av e-handel (WooCommerce).</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2024 – 2025</div>
+                <div class="timeline-title">IT-tekniker</div>
+                <div class="timeline-company">Resolutor AB</div>
+                <p>Användarsupport, felsökning och hantering av teknisk infrastruktur.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2012 – 2024</div>
+                <div class="timeline-title">IT-administratör & Systemförvaltare</div>
+                <div class="timeline-company">TVH Nordic AB</div>
+                <p>Långsiktigt ansvar för nätverk, systemunderhåll och säkerställande av stabil IT-drift.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2010 – 2011</div>
+                <div class="timeline-title">Webbhandel</div>
+                <div class="timeline-company">Kommunal vuxenutbildning</div>
+                <p>Specialiserad utbildning inom e-handel och digital försäljning.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2007 – 2008</div>
+                <div class="timeline-title">Technical Support Agent</div>
+                <div class="timeline-company">Sykes AB</div>
+                <p>Teknisk support och kundhantering.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" style="text-align: center;">
+        <h2>Låt oss prata</h2>
+        <p style="color: var(--gray-text); margin-bottom: 2rem;">Söker du konsultation för webbutveckling, drift eller IT-support? Tveka inte att höra av dig.</p>
+        <a href="mailto:din.epost@exempel.se" class="btn">Skicka ett mail</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rickard Malm. Alla rättigheter reserverade.</p>
+    </footer>
+
+</body>
+</html>
